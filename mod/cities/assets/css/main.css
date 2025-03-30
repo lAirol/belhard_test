@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #3e5a70;
+    --secondary-color: #f8f9fa;
+    --cancel-color: #dc3545;
+    --table-background: #fff;
+    --row-hover-color: #f2f2f2;
+    --border-color: #ddd;
+    --text-color: #333;
+    --link-color: #007bff;
+    --link-hover-color: #00000036;
+    --dialog-color: #fff;
+    --dialog-bg: rgba(0, 0, 0, 0.30);
+
+    --active-bg-color: #0056b3;
+    --active-border-color: #0056b3;
+    --delete-color: #dc3545;
+    --delete-hover-bg-color: #f8d7da;
+    --delete-hover-color: #a71d2a;
+    --delete-active-bg-color: #a71d2a;
+    --delete-border-color: #a71d2a;
+
+
+    --base-font-size: 1rem;
+    --heading-font-size: 1.5rem;
+    --table-padding: 0.75rem;
+    --table-spacing: 1.25rem;
+    --shadow-size: 0.125rem 0.125rem 0.3125rem;
+    --border-radius: 0.5rem;
+}
+
+.cities-table-container {
+    margin: 0 auto;
+    padding: var(--table-spacing);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-size) rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.cities-table-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--table-spacing);
+    font-size: var(--heading-font-size);
+}
+
+.cities-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--table-background);
+}
+
+.cities-table th, .cities-table td {
+    padding: var(--table-padding);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cities-table th {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.cities-table tr:nth-child(even) {
+    background-color: var(--row-hover-color);
+}
+
+.cities-table-cell {
+    font-size: var(--base-font-size);
+    color: var(--text-color);
+}
+
+.cities-table-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color, #007bff);
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.cities-table-link:hover {
+    background-color: var(--hover-bg-color, #f2f2f2);
+    color: var(--hover-color, #0056b3);
+    border-color: var(--primary-color, #007bff);
+}
+
+.cities-table-link:active {
+    background-color: var(--active-bg-color, #0056b3);
+    color: #fff;
+    border-color: var(--active-border-color, #0056b3);
+}
+
+.cities-table-link.delete {
+    color: var(--delete-color, #dc3545);
+}
+
+.cities-table-link.delete:hover {
+    background-color: var(--delete-hover-bg-color, #f8d7da);
+    color: var(--delete-hover-color, #a71d2a);
+}
+
+.cities-table-link.delete:active {
+    background-color: var(--delete-active-bg-color, #a71d2a);
+    color: #fff;
+    border-color: var(--delete-border-color, #a71d2a);
+}
+
+
+@media (max-width: 768px) {
+    .cities-table-container {
+        padding: var(--table-padding);
+    }
+
+    .cities-table {
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+    .cities-table thead {
+        display: none;
+    }
+
+    .cities-table tr {
+        display: block;
+        margin-bottom: var(--table-spacing);
+    }
+
+    .cities-table td {
+        display: block;
+        text-align: right;
+        padding: var(--table-padding);
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+    }
+
+    .cities-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: var(--table-padding);
+        text-align: left;
+        font-weight: bold;
+        color: var(--text-color);
+    }
+}
+
+.cities-add-button-container {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.cities-add-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.cities-add-button:hover {
+    background-color: var(--link-hover-color);
+}
+
+.name-cell{
+    max-width: 350px;
+    word-wrap: anywhere;
+}

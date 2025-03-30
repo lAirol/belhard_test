@@ -1,0 +1,136 @@
+.city-dialog-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.addCityForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: var(--dialog-color, #ffffff);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color, #007bff);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.form-group-checkbox {
+    width: 100%;
+    margin-bottom: 1rem;
+
+}
+
+.form-group-checkbox label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    margin-right: 0.5rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+button {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.addButton {
+    background-color: var(--primary-color, #007bff);
+    color: #fff;
+}
+
+button.addButton:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button.cancelButton {
+    background-color: var(--cancel-color, #dc3545);
+    color: #fff;
+}
+
+button.cancelButton:hover {
+    background-color: #a71d2a;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .addCityForm {
+        padding: 1.5rem;
+        z-index: 10001;
+    }
+
+    .form-group input {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
